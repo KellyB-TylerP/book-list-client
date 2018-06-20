@@ -7,22 +7,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="script/styles/base.css">
+        <link rel="stylesheet" href="script/styles/layout.ccs">
+        <link rel="stylesheet" href="script/styles/module.css">
 
-    </head>
+        <script id="book-list-template" type="text/x-handlebars-template">
+            <book class="clearfix" data-book="{{book}}" data-author="{{author}}">
+             
+                <title>Book App</title>
+                <div class="bb-nav">
+                        <h1>{{title}}</h1>
+                   <p> By {{author}} </p>
+                   <section class="description">{{{description}}}</section>
+                </div>
+                
+                <img class="book-box" src="{{image_url}}" />
+            
+            
+                
+                
+            </book>
 
-    <body>
-        <h1>Kelly & Tyler Book app</h1>
-        <script id="book-template" type="text/x-handlebars-template">
-        <section>
-            <h1>{{title}}</h1>
-            <p>By:{{author}}</p>
-            <p>Total books:{{books}}</p>
-        </section>
     </script>
+    </head>
+    <header>
+        <div class="wrapper">
+            <div class="nav">
+                <h1>Kelly & Tyler Book App</h1>
+                <h6>My Books</h6>
+                <!-- </div>
+            <div class="background-box"></div>
+            <div class="book-box">bookbox</div>
+            <div class="bb-nav">bb-nav</div>
+            <div class="footer">insta/github</div>
+        </div> -->
+    </header>
+
+    <body class="wrapper">
+
+
+        <section class="container">
+        </section>
+
+        <section class="book-view" id="book-list">
+        </section>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="script/book.js"></script>
         <script src="index.js"></script>
         <script src="script/bookView.js"></script>
     </body>
