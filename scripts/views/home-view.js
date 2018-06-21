@@ -1,4 +1,10 @@
+
+
 let homeView = {};
+
+
+
+
 
 homeView.initIndexPage = () => {
     $('.container').hide();
@@ -7,4 +13,4 @@ homeView.initIndexPage = () => {
     Book.all.forEach(a => $('#book-list').append(a.toHtml()));
 }
 
-//
+

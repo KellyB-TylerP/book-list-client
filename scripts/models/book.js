@@ -1,4 +1,6 @@
+var app = app || {};
 
+// (function(module){
 //Array of all books
 Book.all = [];
 //Array of limited books
@@ -97,3 +99,40 @@ Book.loadOne = rows => {
     Book.one = rows.map((info) => new Book(info));
 }
 
+Book.fetchLimited = callback => {
+    $.get(`${app.ENVIRONMENT.apiURL}/api/v1/books`)
+        .then(results => {
+            Book.loadLimited(results);
+            callback();
+        })
+};
+
+Book.fetchOne = callback => {
+    $.get(`${app.ENVIRONMENT.apiURL}/api/v1/books`)
+        .then(results => {
+            Book.loadOne(results);
+            callback();
+        })
+};
+
+let homeView = {};
+
+
+
+
+
+homeView.initIndexPage = () => {
+    $('.container').hide();
+    $('.book-view').show();
+    $('.home-view').innerHTML = "";
+    Book.all.forEach(a => $('#book-list').append(a.toHtml()));
+}
+
+
+$(document).ready(function () {
+    Book.fetchAll(homeView.initIndexPage);
+    
+});
+
+
+// })(app);
