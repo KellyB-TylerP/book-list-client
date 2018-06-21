@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-(function (module) {
+// (function (module) {
 
     let productionApiUrl = 'insert cloud API server URL here';
     let developmentApiUrl = 'http://localhost:3000';
@@ -29,4 +29,4 @@ var app = app || {};
         return module.taskTemplate(data);
     }
 
-})(app);
+// })(app);

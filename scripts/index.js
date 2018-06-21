@@ -1,7 +1,7 @@
 
 'use strict'
 
-var app = {};
+var app = app || {};
 
 (function(module){
 
@@ -22,3 +22,6 @@ function errorCallback(errorObj) {
 };
 
 })(app);
+
+
+
