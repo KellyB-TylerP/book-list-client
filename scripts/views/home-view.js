@@ -1,4 +1,4 @@
-
+'use strict'
 
 let homeView = {};
 
@@ -14,3 +14,6 @@ homeView.initIndexPage = () => {
 }
 
 
+function homeViewNav(){
+    $('.book-view').show()
+}

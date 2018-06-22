@@ -1,3 +1,5 @@
+'use strict'
+
 let bookView = {};
 
 bookView.initIndexPage = () => {
@@ -7,5 +9,9 @@ bookView.initIndexPage = () => {
     Book.one.forEach(a => $('#single-book').append(a.toHtml()));
 }
 
+function bookViewNav(){
+    $('.book-view').hide()
+
+}
 
 //

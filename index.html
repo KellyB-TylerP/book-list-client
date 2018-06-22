@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link rel="stylesheet" href="scripts/styles/reset.css">
         <link rel="stylesheet" href="scripts/styles/base.css">
         <link rel="stylesheet" href="scripts/styles/layout.ccs">
         <link rel="stylesheet" href="scripts/styles/module.css">
@@ -32,9 +33,20 @@
     </head>
     <header>
         <div class="wrapper">
-            <div class="nav">
+            <div class="navy">
                 <h1>Kelly & Tyler Book App</h1>
                 <h6>My Books</h6>
+                <button class="nav">
+                    <a href="/">Home</a>
+                </button>
+                <button class="nav">
+                    <a href="/">Home</a>
+                </button>
+                <button class="nav">
+                    <a href="/">Home</a>
+                </button>
+
+
                 <!-- </div>
             <div class="background-box"></div>
             <div class="book-box">bookbox</div>
@@ -45,23 +57,47 @@
 
     <body class="wrapper">
 
+        <section class="container-form" id="form-view">
+            <form>
+                <legend>Add a new book</legend>
+                <label>Title:
+                    <input id="title" type="text">
+                </label>
+                <label>Author:
+                    <input id="author" type="text">
+                </label>
+                <label>ISBN:
+                    <input id="isbn" type="text">
+                </label>
+                <label>Image URL:
+                    <input id="image-url" type="text">
+                </label>
+                <label>Description:
+                    <input id="description" type="text">
+                </label>
+                <button id="formButton">Click me</button>
+            </form>
 
-        <section class="container">
-        </section>
+            <section class="container">
+            </section>
 
-        <section class="book-view" id="book-list">
+            <section class="book-view" id="book-list">
+            </section>
+
+
         </section>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-            <script src="scripts/index.js"></script>
-            <script src="scripts/models/book.js"></script>
-            <script src="scripts/views/routes.js"></script>
-            <!-- <script src="scripts/views/home-view.js"></script> -->
-            <script src="scripts/views/book-view.js"></script>
-            <script src="scripts/views/error-view.js"></script>
+        <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+        <script src="scripts/index.js"></script>
+        <script src="scripts/models/book.js"></script>
+        <script src="scripts/views/routes.js"></script>
+        <!-- <script src="scripts/views/home-view.js"></script> -->
+        <script src="scripts/views/book-view.js"></script>
+        <script src="scripts/views/error-view.js"></script>
 
 
 
