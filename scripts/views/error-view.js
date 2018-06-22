@@ -1,3 +1,5 @@
+'use strict'
+
 let errorView = {};
 
 errorView.initErrorPage = (err) => {
@@ -10,6 +12,10 @@ errorView.initErrorPage = (err) => {
 function errorCallback(errorObj) {
     console.log(errorObj);
     errorView.initErrorPage(errorObj);
+}
+
+function errorViewNav(){
+    $('.book-view').hide()
 }
 
 //

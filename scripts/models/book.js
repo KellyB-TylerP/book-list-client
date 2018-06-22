@@ -1,3 +1,5 @@
+'use strict'
+
 var app = app || {};
 
 // (function(module){
@@ -114,6 +116,20 @@ Book.fetchOne = callback => {
             callback();
         })
 };
+
+$('#formButton').on('click', handleform);
+
+function handleform(event) {
+    event.preventDefault();
+    console.log('clickyboi');
+    let formData = {};
+    formData.author = $('#author').val();
+    formData.title = $('#title').val();
+    formData.isbn = $('#isbn').val();
+    formData.image_url = $('#image-url').val();
+    formData.description = $('#description').val();
+    console.log(formData);
+}
 
 let homeView = {};
 
