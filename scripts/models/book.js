@@ -6,14 +6,17 @@ var app = app || {};
 //Array of all books
 Book.all = [];
 //Array of limited books
-Book.limited = []; 
+Book.limited = [];
 //Array of one book
-Book.one = []; 
+Book.one = [];
 
 
 //book object
 function Book(bookObj) {
     Object.keys(bookObj).forEach(key => this[key] = bookObj[key]);
+    // module.Book = {
+
+    // }
 }
 
 //append to html
@@ -24,7 +27,7 @@ Book.prototype.toHtml = function () {
 
 
 //load all books
-Book.loadAll = rows => { 
+Book.loadAll = rows => {
     rows.sort(function (a, b) {
 
         let authorA = a.title.toUpperCase();
@@ -43,7 +46,7 @@ Book.loadAll = rows => {
 //Fetch all books
 Book.fetchAll = callback => {
     $.get(`${app.ENVIRONMENT.apiURL}/api/v1/books`)
-        .then(function(results) {
+        .then(function (results) {
             Book.loadAll(results);
             callback();
         })
@@ -147,8 +150,8 @@ homeView.initIndexPage = () => {
 
 $(document).ready(function () {
     Book.fetchAll(homeView.initIndexPage);
-    
+
 });
 
-
-// })(app);
+module.Book = Book;
+}) (app);

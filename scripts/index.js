@@ -3,23 +3,24 @@
 
 var app = app || {};
 
-(function(module){
+(function (module) {
 
-// Evaluate for production or development enviroment
-let productionApi = `https://kb-tp-booklist.herokuapp.com`;
-let devApi = `http://localhost:3000`;
 
-module.isProduction = /^(?!localhost|127)/.test(window.location.hostname);
+    // Evaluate for production or development enviroment
+    let productionApi = `https://kb-tp-booklist.herokuapp.com`;
+    let devApi = `http://localhost:3000`;
 
-module.ENVIRONMENT = {
-    apiURL: module.isProduction ? productionApi : devApi
-};
+    module.isProduction = /^(?!localhost|127)/.test(window.location.hostname);
 
-// Error callback
-function errorCallback(errorObj) {
-    console.log(errorObj);
-    errorView.initErrorPage(errorObj);
-};
+    module.ENVIRONMENT = {
+        apiURL: module.isProduction ? productionApi : devApi
+    };
+
+    // Error callback
+    module.errorCallback = errorObj => {
+        console.log(errorObj);
+        module.errorView.initErrorPage(errorObj);
+    };
 
 })(app);
 

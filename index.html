@@ -1,106 +1,102 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 
-    <html lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <link rel="stylesheet" href="scripts/styles/reset.css">
-        <link rel="stylesheet" href="scripts/styles/base.css">
-        <link rel="stylesheet" href="scripts/styles/layout.ccs">
-        <link rel="stylesheet" href="scripts/styles/module.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="scripts/styles/reset.css">
+    <link rel="stylesheet" href="scripts/styles/base.css">
+    <link rel="stylesheet" href="scripts/styles/layout.css">
+    <link rel="stylesheet" href="scripts/styles/module.css">
 
-        <script id="book-list-template" type="text/x-handlebars-template">
-            <book class="clearfix" data-book="{{book}}" data-author="{{author}}">
-             
-                <title>Book App</title>
-                <div class="bb-nav">
+    <script id="book-list-template" type="text/x-handlebars-template">
+            <div class="cover" data-book="{{book}}" data-author="{{author}}">
+                <img class="book-view" id="book-list" src="{{image_url}}" />
                         <h1>{{title}}</h1>
                    <p> By {{author}} </p>
                    <section class="description">{{{description}}}</section>
+            
                 </div>
-                
-                <img class="book-box" src="{{image_url}}" />
-            
-            
-                
-                
-            </book>
 
     </script>
-    </head>
+</head>
+
+<body class="wrapper">
+
     <header>
         <div class="wrapper">
-            <div class="navy">
-                <h1>Kelly & Tyler Book App</h1>
-                <h6>My Books</h6>
-                <button class="nav">
-                    <a href="/">Home</a>
-                </button>
-                <button class="nav">
-                    <a href="/">Home</a>
-                </button>
-                <button class="nav">
-                    <a href="/">Home</a>
-                </button>
+            <div class="navy"></div>
+            <h1>Kelly & Tyler Book App</h1>
+            <h6>My Books</h6>
+            <button class="nav">
+                <a href="/">Home</a>
+            </button>
+            <button class="nav">
+                <a href="/">Admin</a>
+            </button>
+            <button class="nav">
+                <a href="/">about us</a>
+            </button>
 
 
-                <!-- </div>
-            <div class="background-box"></div>
-            <div class="book-box">bookbox</div>
-            <div class="bb-nav">bb-nav</div>
-            <div class="footer">insta/github</div>
-        </div> -->
+        </div>
+        <div class="background-box"></div>
+        <!-- <div class="book-box">bookbox</div> -->
+        <section class="book-view" id="book-list">
+        </section>
+        <div class="bb-nav">bb-nav</div>
+        <div class="footer">insta/github</div>
+        </div>
     </header>
 
-    <body class="wrapper">
 
-        <section class="container-form" id="form-view">
-            <form>
-                <legend>Add a new book</legend>
-                <label>Title:
-                    <input id="title" type="text">
-                </label>
-                <label>Author:
-                    <input id="author" type="text">
-                </label>
-                <label>ISBN:
-                    <input id="isbn" type="text">
-                </label>
-                <label>Image URL:
-                    <input id="image-url" type="text">
-                </label>
-                <label>Description:
-                    <input id="description" type="text">
-                </label>
-                <button id="formButton">Click me</button>
-            </form>
+    <section class="container-form" id="form-view">
+        <form>
+            <legend>Add a new book</legend>
+            <label>Title:
+                <input id="title" type="text">
+            </label>
+            <label>Author:
+                <input id="author" type="text">
+            </label>
+            <label>ISBN:
+                <input id="isbn" type="text">
+            </label>
+            <label>Image URL:
+                <input id="image-url" type="text">
+            </label>
+            <label>Description:
+                <input id="description" type="text">
+            </label>
+            <button id="formButton">Click me</button>
+        </form>
 
-            <section class="container">
-            </section>
-
-            <section class="book-view" id="book-list">
-            </section>
-
-
+        <section class="container">
         </section>
 
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-        <script src="scripts/index.js"></script>
-        <script src="scripts/models/book.js"></script>
-        <script src="scripts/views/routes.js"></script>
-        <!-- <script src="scripts/views/home-view.js"></script> -->
-        <script src="scripts/views/book-view.js"></script>
-        <script src="scripts/views/error-view.js"></script>
+        <!-- <section class="book-view" id="book-list">
+        </section> -->
 
 
+    </section>
 
-    </body>
 
-    </html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/models/book.js"></script>
+    <script src="scripts/views/routes.js"></script>
+    <!-- <script src="scripts/views/home-view.js"></script> -->
+    <script src="scripts/views/book-view.js"></script>
+    <script src="scripts/views/error-view.js"></script>
+
+
+
+</body>
+
+</html>

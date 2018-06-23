@@ -1,17 +1,21 @@
 'use strict'
 
-let bookView = {};
+var app = app || {};
 
-bookView.initIndexPage = () => {
-    $('.container').hide();
-    $('.book-view').show();
-    $('.book-view').innerHTML = "";
-    Book.one.forEach(a => $('#single-book').append(a.toHtml()));
-}
+(function (module) {
+    let bookView = {};
 
-function bookViewNav(){
-    $('.book-view').hide()
 
-}
 
-//
+    module.bookView.initIndexPage = () => {
+        $('.container').hide();
+        $('.book-view').show();
+        $('.book-view').innerHTML = "";
+        Book.one.forEach(a => $('#single-book').append(a.toHtml()));
+    }
+
+    function bookViewNav() {
+        $('.book-view').hide()
+
+    };
+})(app);
